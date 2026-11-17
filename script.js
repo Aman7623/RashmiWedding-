@@ -85,6 +85,33 @@ document.addEventListener("DOMContentLoaded", () => {
   // Both wax seal and open button work.
   // ========================================
 
+  function createSealSparkles() {
+    const sealBounds = sealButton.getBoundingClientRect();
+    const sceneBounds = envelopeScene.getBoundingClientRect();
+    const centerX = sealBounds.left + sealBounds.width / 2 - sceneBounds.left;
+    const centerY = sealBounds.top + sealBounds.height / 2 - sceneBounds.top;
+    const colors = ["#fff1c2", "#d9b66f", "#fffaf0", "#d78d98"];
+
+    for (let index = 0; index < 30; index++) {
+      const sparkle = document.createElement("span");
+      const angle = (Math.PI * 2 * index) / 30 + Math.random() * 0.12;
+      const distance = 55 + Math.random() * 95;
+
+      sparkle.className = "seal-sparkle";
+      sparkle.setAttribute("aria-hidden", "true");
+      sparkle.textContent = index % 3 === 0 ? "✧" : "✦";
+      sparkle.style.left = `${centerX}px`;
+      sparkle.style.top = `${centerY}px`;
+      sparkle.style.setProperty("--sparkle-x", `${Math.cos(angle) * distance}px`);
+      sparkle.style.setProperty("--sparkle-y", `${Math.sin(angle) * distance}px`);
+      sparkle.style.setProperty("--sparkle-color", colors[index % colors.length]);
+      sparkle.style.setProperty("--sparkle-size", `${14 + Math.random() * 14}px`);
+      sparkle.style.setProperty("--sparkle-delay", `${index * 10}ms`);
+      envelopeScene.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 1900);
+    }
+  }
+
   function openInvitation() {
     if (invitationOpened) return;
     invitationOpened = true;
@@ -114,10 +141,13 @@ document.addEventListener("DOMContentLoaded", () => {
         createPetals();
         window.scrollTo({ top: 0, behavior: "smooth" });
       }, 1000);
-    }, 2100);
+    }, 3200);
   }
 
-  sealButton.addEventListener("click", openInvitation);
+  sealButton.addEventListener("click", () => {
+    createSealSparkles();
+    openInvitation();
+  });
   openButton.addEventListener("click", openInvitation);
 
   // ========================================

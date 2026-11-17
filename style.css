@@ -215,7 +215,7 @@ button {
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 20px #77523b15;
-  transition: transform 1.7s cubic-bezier(.2,.8,.2,1);
+  transition: transform 2.4s cubic-bezier(.2,.8,.2,1);
   z-index: 2;
 }
 
@@ -328,6 +328,33 @@ button {
 .envelope-scene.open .letter {
   transform: translateY(-155px) scale(1.04);
   transition-delay: 0.5s;
+}
+
+.seal-sparkle {
+  position: absolute;
+  z-index: 12;
+  color: var(--sparkle-color);
+  font-size: var(--sparkle-size);
+  line-height: 1;
+  text-shadow: 0 0 12px #fff8d6, 0 0 22px currentColor;
+  pointer-events: none;
+  animation: sealSparkleBurst 1.45s cubic-bezier(.16,.7,.25,1) var(--sparkle-delay) forwards;
+}
+
+@keyframes sealSparkleBurst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.15) rotate(0);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--sparkle-x)), calc(-50% + var(--sparkle-y))) scale(0.25) rotate(150deg);
+  }
 }
 
 .opening-hint {
@@ -573,6 +600,87 @@ button {
   font-style: italic;
 }
 
+/* WEDDING CELEBRATIONS */
+
+.events-section {
+  max-width: 540px;
+  margin: 45px auto;
+}
+
+.events-section > h3 {
+  margin: 12px 0 22px;
+  color: var(--deep-rose);
+  font-family: "Great Vibes", cursive;
+  font-size: 43px;
+  font-weight: 400;
+}
+
+.event-list {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+  list-style: none;
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 15px 18px;
+  border: 1px solid #d6b985;
+  background: linear-gradient(110deg, #fffaf3, #f8eae2);
+}
+
+.event-date {
+  display: flex;
+  flex: 0 0 52px;
+  flex-direction: column;
+  align-items: center;
+  color: var(--deep-rose);
+  font-family: "Playfair Display", serif;
+}
+
+.event-date span:first-child {
+  font-size: 27px;
+  line-height: 1;
+}
+
+.event-date span:nth-child(2) {
+  margin-top: 4px;
+  color: var(--dark-gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.event-date span:last-child {
+  color: var(--dark-gold);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.event-details {
+  flex: 1;
+}
+
+.event-details h4 {
+  color: var(--deep-rose);
+  font-family: "Playfair Display", serif;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.event-details p {
+  margin-top: 3px;
+  color: var(--dark-gold);
+  font-size: 15px;
+  font-style: italic;
+}
+
+.event-flower {
+  color: var(--gold);
+  font-size: 21px;
+}
+
 /* COUNTDOWN */
 
 .countdown-section {
@@ -770,6 +878,15 @@ footer {
 
   .invitation-message {
     font-size: 19px;
+  }
+
+  .event-item {
+    gap: 12px;
+    padding: 13px 12px;
+  }
+
+  .event-details h4 {
+    font-size: 16px;
   }
 
   .venue-section {
