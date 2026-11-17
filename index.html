@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f9eee9">
+  <meta name="description" content="Join us to celebrate the wedding of Rashmi Kumari and Aman Kumar on 9 December 2026.">
+
+  <title>Rashmi &amp; Aman | Garden of Romance</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient-glow"></div>
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <!-- Background music control -->
+  <button id="musicToggle" class="music-toggle" type="button" aria-label="Play background music" aria-pressed="false">
+    <span id="musicIcon">♫</span>
+    <span id="musicLabel">Play Music</span>
+  </button>
+
+  <main>
+    <!-- OPENING SCREEN -->
+    <section id="opening" class="opening-screen">
+      <div class="opening-ornament" aria-hidden="true">
+        <span>✿</span><span>❀</span><span>✿</span>
+      </div>
+
+      <p class="eyebrow">A SPECIAL INVITATION</p>
+
+      <div class="envelope-scene" id="envelopeScene">
+        <div class="envelope-shadow"></div>
+        <div class="envelope">
+          <div class="envelope-back"></div>
+          <div class="letter">
+            <p class="letter-small">Together with our families</p>
+            <h1>Rashmi <span>&amp;</span> Aman</h1>
+            <p class="letter-date">09 · 12 · 2026</p>
+            <p class="letter-bottom">You are cordially invited</p>
+          </div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+
+          <button type="button" id="waxSeal" class="wax-seal" aria-label="Tap the R and A seal to open invitation">
+            <span>R</span><span class="seal-amp">&amp;</span><span>A</span>
+          </button>
+        </div>
+      </div>
+
+      <p class="opening-hint" id="openingHint">Touch the R &amp; A seal to open your invitation</p>
+      <button id="openInvitation" class="open-button" type="button">OPEN INVITATION <span>✧</span></button>
+    </section>
+
+    <!-- MAIN INVITATION -->
+    <section id="invitation" class="invitation hidden">
+      <div class="invitation-frame">
+        <div class="top-floral">❀ ❁ ❀</div>
+        <p class="eyebrow">THE BEGINNING OF FOREVER</p>
+        <p class="invitation-intro">With the blessings of our families</p>
+        <p class="hindi-intro">सपरिवार सादर आमंत्रित हैं</p>
+        <div class="monogram">R <span>&amp;</span> A</div>
+
+        <h2 class="couple-names">
+          <span>Rashmi</span><span class="ampersand">&amp;</span><span>Aman</span>
+        </h2>
+        <p class="hindi-names">रश्मि कुमारी एवं अमन कुमार</p>
+        <div class="gold-divider"><span>✧</span></div>
+
+        <p class="invitation-message">
+          Two hearts, two families, one beautiful journey.
+          We would be delighted to have you with us as we
+          celebrate the beginning of our forever.
+        </p>
+        <p class="hindi-message">
+          दो दिलों का सुंदर मिलन और जीवन की नई शुरुआत।
+          इस शुभ अवसर पर आपकी उपस्थिति और आशीर्वाद
+          हमारे लिए अनमोल होंगे।
+        </p>
+
+        <!-- WEDDING DATE -->
+        <div class="date-panel">
+          <p class="date-heading">SAVE THE DATE</p>
+          <p class="date-day">WEDNESDAY</p>
+          <h3>09 <span>DECEMBER</span> 2026</h3>
+          <p class="date-note">A day to remember, a love to celebrate</p>
+        </div>
+
+        <!-- LIVE COUNTDOWN -->
+        <section class="countdown-section">
+          <p class="section-kicker">COUNTING DOWN TO FOREVER</p>
+          <div class="countdown">
+            <div class="time-box"><strong id="days">000</strong><span>DAYS</span></div>
+            <div class="time-box"><strong id="hours">00</strong><span>HOURS</span></div>
+            <div class="time-box"><strong id="minutes">00</strong><span>MINUTES</span></div>
+            <div class="time-box"><strong id="seconds">00</strong><span>SECONDS</span></div>
+          </div>
+          <p id="countdownMessage" class="countdown-message"></p>
+        </section>
+
+        <!-- VENUE -->
+        <section class="venue-section">
+          <div class="venue-flower">❀</div>
+          <p class="section-kicker">THE CELEBRATION</p>
+          <h3>Join Us</h3>
+          <p class="venue-name">Chasnala Wedding Hall</p>
+          <p class="venue-description">Your presence will make our celebration<br>even more beautiful.</p>
+          <p class="venue-address">Chasnala, Jharkhand, India</p>
+          <a class="map-button" href="https://www.google.com/maps/search/?api=1&amp;query=Chasnala+Wedding+Hall+Jharkhand" target="_blank" rel="noopener noreferrer"><span>⌖</span> VIEW VENUE ON MAP</a>
+        </section>
+
+        <!-- CLOSING -->
+        <section class="closing-section">
+          <div class="closing-flower">❀</div>
+          <p class="closing-message">With love, laughter and blessings,<br>we look forward to celebrating with you.</p>
+          <p class="closing-hindi">आपका स्नेह और आशीर्वाद ही हमारी सबसे बड़ी खुशी है।</p>
+          <h3>Rashmi <span>&amp;</span> Aman</h3>
+          <p class="forever">Together Forever</p>
+          <div class="bottom-floral">❀ ❁ ❀</div>
+        </section>
+      </div>
+      <footer>MADE WITH LOVE · RASHMI &amp; AMAN · 2026</footer>
+    </section>
+  </main>
+
+  <!-- Keep wedding-song.mp3 in this same folder as index.html -->
+  <audio id="backgroundMusic" preload="auto" loop>
+    <source src="./wedding-song.mp3?v=2" type="audio/mpeg">
+    Your browser does not support HTML audio.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
